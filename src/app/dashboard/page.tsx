@@ -3,7 +3,7 @@ import { api } from "@/services/api";
 import { getCookieServer } from "@/lib/cookieServer";
 import { OrderProps } from "@/lib/order.type";
 
-export async function getOrders(): Promise<OrderProps[] | []>{
+async function getOrders(): Promise<OrderProps[] | []>{
     try{
         const token = await getCookieServer();
 
