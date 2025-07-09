@@ -32,7 +32,7 @@ export function Form({categories}: Props){
         const description = formData.get("description")
 
         if(!name || !categoryIndex || !price || !description || !image){
-            toast.warning("Preencha todos os campos.");
+            toast.warning("Fill in all fields.");
             return;
         }
 
@@ -53,11 +53,11 @@ export function Form({categories}: Props){
         })
         .catch((err) => {
             console.log(err);
-            toast.warning("Falha ao cadastrar esse produto.");
+            toast.warning("Failed to register this product.");
             return;
         })
 
-        toast.success("Produto registrado com sucesso!");
+        toast.success("Product successfully registered!");
         router.push("/dashboard");
     }
 
@@ -66,7 +66,7 @@ export function Form({categories}: Props){
             const image = e.target.files[0];
 
             if(image.type !== "image/jpeg" && image.type !== "image/png"){
-                toast.warning("Formato de arquivo proibido");
+                toast.warning("Prohibited file format");
                 return;
             }
 
@@ -77,7 +77,7 @@ export function Form({categories}: Props){
 
     return(
         <main className={styles.container}>
-            <h1>Novo produto</h1>
+            <h1>New product</h1>
 
             <form className={styles.form} action={handleRegisterProduct}>
                 <label className={styles.labelImage}>
@@ -108,7 +108,7 @@ export function Form({categories}: Props){
                 <input 
                     type="text"
                     name="name"
-                    placeholder="Digite o nome do produto..."
+                    placeholder="Enter the name of the product..."
                     required
                     className={styles.input}
                 />
@@ -116,14 +116,14 @@ export function Form({categories}: Props){
                 <input 
                     type="text"
                     name="price"
-                    placeholder="Digite o preço do produto..."
+                    placeholder="Enter the price of the product..."
                     required
                     className={styles.input}
                 />
 
-                <textarea className={styles.input} placeholder="Digite a decrição do produto..." required name="description"></textarea>
+                <textarea className={styles.input} placeholder="Enter the product description..." required name="description"></textarea>
 
-                <Button name="Cadastrar produto"/>
+                <Button name="Register a product"/>
             </form>
         </main>
     )

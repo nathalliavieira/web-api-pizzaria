@@ -83,11 +83,11 @@ export function OrderProvider({children}: OrderProviderProps){
             })
         }catch(err){
             console.log(err);
-            toast.error("Falha ao finalizar o pedido.");
+            toast.error("Failed to finalize the order.");
             return;
         }
 
-        toast.success("Pedido finalizado com sucesso!");
+        toast.success("Order successfully completed!");
         router.refresh();
         setIsOpen(false);
     }

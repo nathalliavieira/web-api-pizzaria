@@ -6,8 +6,7 @@ import { Toaster } from "sonner";
 const inter = Inter({subsets: ["latin"]});
 
 export const metadata: Metadata = { //Metadata é a nossa pagina global, ou seja, se nao passarmos nada ela será a pagina que irá aparecer por padrao
-  title: "Sujeito Pizza - A melhor pizzaria",
-  description: "A melhor pizzaria do Brasil",
+  title: "PizzaFlow"
 };
 
 export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {

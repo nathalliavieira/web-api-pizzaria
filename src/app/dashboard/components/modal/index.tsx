@@ -22,21 +22,21 @@ export function ModalOrder(){
                 </button>
 
                 <article className={styles.container}>
-                    <h2>Detalhes do pedido</h2>
-                    <span className={styles.table}>Mesa <b>{order[0].order.table}</b></span>
+                    <h2>Order Details</h2>
+                    <span className={styles.table}>Table <b>{order[0].order.table}</b></span>
 
                     {order.map((item) => (
                         <section className={styles.item} key={item.id}>
                             <span>
-                                Qtd: {item.amount} - <b>{item.product.name}</b> - R$ {parseFloat(item.product.price) * item.amount}
+                                Qty: {item.amount} - <b>{item.product.name}</b> - {parseFloat(item.product.price) * item.amount} €
                             </span>
                             <span className={styles.description}>{item.product.description}</span>
                         </section>
                     ))}
 
-                    <h3 className={styles.total}>Valor total: R$ {calculateTotalOrder(order)}</h3>
+                    <h3 className={styles.total}>Total: {calculateTotalOrder(order)} € </h3>
 
-                    <button className={styles.buttonOrder} onClick={handleFinishOrder}>Concluir pedido</button>
+                    <button className={styles.buttonOrder} onClick={handleFinishOrder}>Complete order</button>
                 </article>
             </section>
         </dialog>

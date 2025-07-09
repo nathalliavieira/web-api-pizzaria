@@ -3,7 +3,7 @@
 import Link from "next/link";
 import styles from "./styles.module.scss";
 import Image from "next/image";
-import logoImg from "/public/logo.svg";
+import logoImg from "/public/logo.png";
 import { LogOutIcon } from "lucide-react";
 
 import { deleteCookie } from "cookies-next";
@@ -16,7 +16,7 @@ export function Header(){
 
     async function handleLogout(){
         deleteCookie("session", {path: "/"});
-        toast.success("Logout feito com sucesso!");
+        toast.success("Logout successful!");
         router.replace("/");
     }
 
@@ -24,15 +24,15 @@ export function Header(){
         <header className={styles.headerContainer}>
             <div className={styles.headerContent}>
                 <Link href="/dashboard">
-                    <Image alt="Logo Sujeito Pizza" src={logoImg} width={190} height={60} priority={true} quality={100}/> {/* priority é prioridade no carregamento */}                
+                    <Image alt="Logo" src={logoImg} width={190} height={50} priority={true} quality={100}/> {/* priority é prioridade no carregamento */}                
                 </Link>
 
                 <nav>
                     <Link href="/dashboard/category">
-                        Categoria
+                        Category
                     </Link>
                     <Link href="/dashboard/product">
-                        Produto
+                        Product
                     </Link>
 
                     <form action={handleLogout}>
